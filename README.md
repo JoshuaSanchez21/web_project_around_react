@@ -1,16 +1,114 @@
-# React + Vite
+# WEB_PROJECT_AROUND_REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto forma parte del **bootcamp de Desarrollo Web de TripleTen** y consiste en una versión en **React** del proyecto "Around the U.S.".
 
-Currently, two official plugins are available:
+La aplicación muestra un perfil de usuario y una galería de tarjetas con imágenes de lugares. También incluye ventanas emergentes (popups) para editar el perfil, cambiar el avatar, añadir nuevas tarjetas y visualizar imágenes en tamaño completo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías utilizadas
 
-## React Compiler
+- React
+- JavaScript (ES6+)
+- Vite
+- HTML5
+- CSS3
+- BEM (Block Element Modifier)
+- ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 Estructura del proyecto
 
-## Expanding the ESLint configuration
+WEB_PROJECT_AROUND_REACT
+│
+├── blocks/ # Estilos CSS organizados por bloques (metodología BEM)
+├── images/ # Imágenes utilizadas en el proyecto
+├── node_modules/ # Dependencias del proyecto
+├── public/ # Recursos públicos (ícono de Vite)
+├── vendor/ # Fuentes y normalize.css
+│
+├── src/
+│ ├── components/
+│ │ ├── Header/
+│ │ │ └── Header.jsx
+│ │ │
+│ │ ├── Footer/
+│ │ │ └── Footer.jsx
+│ │ │
+│ │ └── Main/
+│ │ ├── Main.jsx
+│ │ │
+│ │ └── components/
+│ │ ├── Card/
+│ │ │ └── Card.jsx
+│ │ │
+│ │ └── Popup/
+│ │ ├── Popup.jsx
+│ │ │
+│ │ ├── ImagePopup/
+│ │ │ └── ImagePopup.jsx
+│ │ │
+│ │ └── form/
+│ │ ├── EditAvatar/
+│ │ │ └── EditAvatar.jsx
+│ │ │
+│ │ ├── EditProfile/
+│ │ │ └── EditProfile.jsx
+│ │ │
+│ │ └── NewCard/
+│ │ └── NewCard.jsx
+│ │
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── index.css
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── eslint.config.js
+├── .gitignore
+└── README.md
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Componentes principales
+
+### App
+
+Componente raíz que renderiza:
+
+- Header
+- Main
+- Footer
+
+### Header
+
+Contiene el logo de la aplicación.
+
+### Main
+
+Contiene:
+
+- Información del perfil
+- Galería de tarjetas
+- Lógica para abrir y cerrar popups usando `useState`
+
+### Card
+
+Representa una tarjeta de imagen en la galería.  
+Al hacer clic en una imagen se abre un **popup con la imagen ampliada**.
+
+### Popup
+
+Componente reutilizable que renderiza distintos tipos de ventanas emergentes:
+
+- Formularios
+- Visualización de imágenes
+
+### Formularios disponibles
+
+- Editar perfil
+- Editar avatar
+- Añadir nueva tarjeta
+
+### ImagePopup
+
+Muestra una imagen ampliada junto con su descripción.
+
+## Enlace GitHub

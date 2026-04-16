@@ -1,4 +1,30 @@
-export default function EditProfile() {
+import { useState, useContext, useEffect } from "react";
+import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
+
+export default function EditProfile({ onSubmit }) {
+  const { currentUser } = useContext(CurrentUserContext);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    if (currentUser) {
+      setName(currentUser?.name || "");
+      setDescription(currentUser?.about || "");
+    }
+  }, [currentUser]);
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ name: name, about: description });
+  };
   return (
     <>
       <fieldset className="popup__content">
@@ -11,6 +37,8 @@ export default function EditProfile() {
             placeholder="Nombre"
             required
             minLength="2"
+            value={name}
+            onChange={handleNameChange}
           />
           <span className="error-message"></span>
         </label>
@@ -23,6 +51,8 @@ export default function EditProfile() {
             placeholder="Acerca de mí"
             required
             minLength="2"
+            value={description}
+            onChange={handleDescriptionChange}
           />
           <span className="error-message"></span>
         </label>
@@ -31,7 +61,7 @@ export default function EditProfile() {
         <button
           type="submit"
           className="popup__button popup__button_save"
-          disabled
+          onClick={handleSubmit}
         >
           Guardar
         </button>

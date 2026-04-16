@@ -1,4 +1,16 @@
-export default function EditAvatar() {
+import { useRef } from "react";
+
+export default function EditAvatar({ onSubmit }) {
+  const avatarRef = useRef();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    onSubmit({
+      avatar: avatarRef.current.value,
+    });
+  }
+
   return (
     <>
       <fieldset className="popup__content">
@@ -10,6 +22,7 @@ export default function EditAvatar() {
             className="popup__input popup__input_link"
             placeholder="https://"
             required
+            ref={avatarRef}
           />
           <span className="error-message"></span>
         </label>
@@ -18,7 +31,7 @@ export default function EditAvatar() {
         <button
           type="submit"
           className="popup__button popup__button_save"
-          disabled
+          onClick={handleSubmit}
         >
           Guardar
         </button>

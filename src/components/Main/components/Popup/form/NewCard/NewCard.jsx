@@ -1,4 +1,18 @@
-export default function NewCard() {
+import { useState } from "react";
+
+export default function NewCard({ onSubmit }) {
+  const [name, setName] = useState("");
+  const [link, setLink] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    onSubmit({
+      name,
+      link,
+    });
+  }
+
   return (
     <>
       <fieldset className="popup__content">
@@ -11,6 +25,8 @@ export default function NewCard() {
           required
           minLength="1"
           maxLength="30"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <span className="error-message"></span>
         <input
@@ -20,6 +36,8 @@ export default function NewCard() {
           className="popup__input popup__input_link"
           placeholder="https://"
           required
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
         />
         <span className="error-message"></span>
       </fieldset>
@@ -27,7 +45,7 @@ export default function NewCard() {
         <button
           type="submit"
           className="popup__button popup__button_save"
-          disabled
+          onClick={handleSubmit}
         >
           Guardar
         </button>

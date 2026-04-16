@@ -112,3 +112,5 @@ Componente reutilizable que renderiza distintos tipos de ventanas emergentes:
 Muestra una imagen ampliada junto con su descripción.
 
 ## Enlace GitHub
+
+https://joshuasanchez21.github.io/web_project_around_react/

@@ -3,7 +3,6 @@ import NewCard from "./components/Popup/form/NewCard/NewCard";
 import EditProfile from "./components/Popup/form/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/form/EditAvatar/EditAvatar";
 import Card from "./components/Card/Card";
-import api from "../../utils/api";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 import { useState, useEffect, useContext } from "react";

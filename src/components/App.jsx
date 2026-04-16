@@ -1,9 +1,9 @@
-/*import Main from "./components/Main/Main";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Main from "./Main/Main";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import { useState, useEffect } from "react";
-import api from "./utils/api";
-import CurrentUserContext from "./contexts/CurrentUserContext";
+import api from "../utils/api";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
   //Cards
@@ -116,4 +116,3 @@ function App() {
   );
 }
 export default App;
-*/
